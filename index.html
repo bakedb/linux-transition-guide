@@ -1,0 +1,55 @@
+// This file is vibe coded.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .widget {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Available HTML Files</h1>
+    <div id="file-list"></div>
+    
+    <script>
+        fetch('index.txt')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                const fileList = document.getElementById('file-list');
+                const files = data.split('\n').filter(file => file.trim() !== '');
+                
+                if (files.length === 0) {
+                    fileList.innerHTML = '<p>No files listed in index.txt.</p>';
+                } else {
+                    files.forEach(file => {
+                        const widget = document.createElement('div');
+                        widget.className = 'widget';
+                        widget.innerHTML = `<a href="${file.trim()}">${file.trim()}</a>`;
+                        fileList.appendChild(widget);
+                    });
+                }
+            })
+            .catch(error => {
+                document.getElementById('file-list').innerHTML = `<p>Error: ${error.message}</p>`;
+            });
+    </script>
+</body>
+</html>

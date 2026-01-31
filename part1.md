@@ -11,6 +11,7 @@ Linux was created by a dude named Linus Torvalds back in the 90s. It was based o
 See, I told you it would be quick.
 ## Why Linux?
 Linux is:
+
 - Yours (you control everything)
 - Free
 - Open Source (you can freely look at, modify, and distribute the code)
@@ -20,6 +21,7 @@ Linux is:
 - Choose when you update
 
 Windows is:
+
 - Not yours (you have very little control over the OS; for example, you can't easily control what telemetry data Microsoft can see)
 - Not free
 - Proprietary (you cannot legally modify or distribute the code)

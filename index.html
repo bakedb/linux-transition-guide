@@ -1,11 +1,11 @@
-// This file is vibe coded.
+<!-- This file was vibe coded. -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Checker</title>
+    <title>Document List</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,12 +18,16 @@
             border-radius: 5px;
             background-color: #f9f9f9;
         }
+        .description {
+            color: #555;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
-    <h1>Available HTML Files</h1>
+    <h1>Available Documents</h1>
     <div id="file-list"></div>
-    
+
     <script>
         fetch('index.txt')
             .then(response => {
@@ -40,9 +44,13 @@
                     fileList.innerHTML = '<p>No files listed in index.txt.</p>';
                 } else {
                     files.forEach(file => {
+                        const [filename, description] = file.split('"');
                         const widget = document.createElement('div');
                         widget.className = 'widget';
-                        widget.innerHTML = `<a href="${file.trim()}">${file.trim()}</a>`;
+                        widget.innerHTML = `
+                            <a href="${filename.trim()}">${filename.trim()}</a> 
+                            <span class="description">${description ? description.trim() : ''}</span>
+                        `;
                         fileList.appendChild(widget);
                     });
                 }

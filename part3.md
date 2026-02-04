@@ -86,4 +86,8 @@ Now, you don't always have to install packages with the terminal. You can use th
 > Linux Mint does not have something called Snap packages. This is due to their proprietary nature from Canonical (the creators of Ubuntu), so they are disabled on all Mint systems by default. I wouldn't use Snap packages or the Snap Store myself, but if you really need to, run `sudo rm /etc/apt/preferences.d/nosnap.pref && apt update && apt install snapd` to get rid of the thing blocking Snap and download Snap Store. Also, you can use && to chain commands, and `x || y` to only trigger command y if x returns an error (returns an exit code not equal to 0).
 
 ## Outro
-Great, you learned some essential terminal commands and installed your first few packages. I hope you are enjoying Linux so far, and there may or may not be a part 4 of this guide. At the time of writing, there is not, but you might want to go check anyway :3
+Great, you learned some essential terminal commands and installed your first few packages. I hope you are enjoying Linux so far, and there may or may not be a part 4 of this guide. You might want to go check :3
+
+Either way, you have officially completed the beginner's course! You can go use your computer in peace now knowing that Microsoft is no longer breathing down your back, or you can go check out the other parts of the guide to learn some more advanced stuff.
+
+If you ever need anything (or you screwed up really bad), DM me on Discord at thatbakedbeans, or send an email to thatbakedbeans@proton.me. Otherwise, Reddit is a good source of help (most of the time).

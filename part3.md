@@ -77,4 +77,13 @@ Lastly, if you are ever stumped about what a command does, prefix it with `man`,
 ## Installing your first package
 Now to make your system actually useful. First, we will install a package using `apt`, then you will open the GUI store to get one in a more simple and easy manner.
 
-Open your terminal once again and type in `sudo apt install fastfetch`.
+Open your terminal once again and type in `sudo apt install fastfetch`. It should ask you for your password (because you used sudo), then install the package. Once it has finished (assuming that it did not fail), run `fastfetch`, and you will get a cool screen that displays your system stats!
+
+> If you want to have fastfetch to run each time you open a terminal, you can edit your `bashrc` file. To do so, run `nano ~/.bashrc`, put `fastfetch` at the bottom, then save. Now, it should run each time you start a bash session!
+
+Now, you don't always have to install packages with the terminal. You can use the store built in to Mint. Just open the popup menu and search for "store" (definitely because I have not used Mint at all for a year and am not even using it while writing this guide and therefore forgot what the store was called... definitely not). Open up the app store, and search for an application (such as prismlauncher if you want to play some Minecraft, or Steam if you want to play some not Minecraft) and hit download. There you go, you just installed an application without even touching one of those nerdy terminal things.
+
+> Linux Mint does not have something called Snap packages. This is due to their proprietary nature from Canonical (the creators of Ubuntu), so they are disabled on all Mint systems by default. I wouldn't use Snap packages or the Snap Store myself, but if you really need to, run `sudo rm /etc/apt/preferences.d/nosnap.pref && apt update && apt install snapd` to get rid of the thing blocking Snap and download Snap Store. Also, you can use && to chain commands, and `x || y` to only trigger command y if x returns an error (returns an exit code not equal to 0).
+
+## Outro
+Great, you learned some essential terminal commands and installed your first few packages. I hope you are enjoying Linux so far, and there may or may not be a part 4 of this guide. At the time of writing, there is not, but you might want to go check anyway :3

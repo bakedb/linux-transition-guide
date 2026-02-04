@@ -128,4 +128,4 @@ As you can see, desktop environments vary quite a lot in functionality and visua
 > **A note about getting GNOME'd:** A common thing that happens to people, especially on Mint, is installing a package that requires the GNOME shell (such as GDM, the GNOME greeter meant to replace SDDM or LightDM; we'll talk about greeters in part 2). This is especially a problem on Mint, because when you install the GNOME shell on an Ubuntu-based system using apt (the Debian package manager), it pulls in the entire Ubuntu session, which is even more unnecesary stuff that you do not need. So if you ever find yourself in GNOME after a restart when you least expect it, this is probably what has happened. To reverse this, just uninstall the GNOME shell.
 
 ## Outro
-Congrats, you have finished part 1! You now know the basics of Linux: a bit of history, distros, and desktop environments. You are now ready to move on to part 2 and get installing.
+Congrats, you have finished part 1! You now know the basics of Linux: a bit of history, distros, and desktop environments. You are now ready to move on to part 2 and get installing :3

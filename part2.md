@@ -39,3 +39,5 @@ It will then ask you for the installation type. If you want to wipe your drive a
 
 ## Outro
 Assuming that nothing went wrong (if it did, you can yell at me at thatbakedbeans@proton.me or thatbakedbeans on Discord. You can still yell at me if it did work, I would love to hear), you should have a fully functional Linux Mint system! Now you are ready to move on to part 3 and learn how to use your package manager and some simple programs.
+
+But first, open Firefox. Go to the settings menu (hamburger menu > settings). Go to the home tab on the left and uncheck everything under "Firefox Home Content", including sponsored shortcuts and sponsored stories. Go to the search tab on the left and change Google to DuckDuckGo. Scroll down a bit and uncheck "Suggestions from sponsors". Now go to https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/ and hit "Add to Firefox". Great, now Firefox is usable :3

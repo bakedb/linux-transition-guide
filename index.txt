@@ -1,1 +1,3 @@
 part1.html "Introducing You to Linux"
+part2.html "Installing Linux"
+part3.html "Learning the Terminal"

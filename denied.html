@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You are using Chromium</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .widget {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .description {
+            color: #555;
+            font-size: 0.9em;
+        }
+        button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            let countdown = 10; // 10 seconds countdown
+            const countdownElement = document.getElementById('countdown');
+            const continueButton = document.getElementById('continueButton');
+
+            const countdownInterval = setInterval(function() {
+                countdownElement.textContent = countdown + ' seconds remaining';
+                countdown--;
+
+                if (countdown < 0) {
+                    clearInterval(countdownInterval);
+                    continueButton.disabled = false;
+                    countdownElement.textContent = ''; // Clear countdown display
+                }
+            }, 1000); // Update every second
+        };
+    </script>
+</head>
+<body>
+    <h1>Don't use Chromium!</h1>
+    <p>It looks like you're using a Chromium-based browser, such as Chrome, Edge, Opera, etc.
+        Using non-Chromium browsers like Firefox can help protect your privacy, as Chromium-based browsers are often linked to data collection by Google.
+        Consider switching to alternatives to help your online privacy.
+        Brave is an exception.
+    </p>
+    <div class="widget">
+        <p class="description">Download non-Chromium browsers now:</p>
+        <a href="https://github.com/gaeulbyul/non-webkit" target="_blank">Download Now</a>
+    </div>
+    <p id="countdown">10 seconds remaining</p>
+    <a href="unblocked.html">
+        <button id="continueButton" disabled>Continue anyway</button>
+    </a>
+</body>
+</html>

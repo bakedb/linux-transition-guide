@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document List</title>
+    <title>Document List for dirty Chromium users</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -25,7 +25,7 @@
     </style>
 </head>
 <body>
-    <h1>Available Documents</h1>
+    <h1>Available Documents for dirty Chromium users</h1>
     <div id="file-list"></div>
 
     <script>
@@ -59,34 +59,5 @@
                 document.getElementById('file-list').innerHTML = `<p>Error: ${error.message}</p>`;
             });
     </script>
-    <script>
-  // Function to detect the user's browser
-  function detectBrowser() {
-    const userAgent = navigator.userAgent;
-
-    // Check for Chromium-based browsers except Brave
-    if (userAgent.includes("Chrome") || userAgent.includes("Chromium")) {
-      // Check if it's not Brave
-      if (!userAgent.includes("Brave")) {
-        // Block access for all other Chromium browsers
-        document.body.innerHTML = "<h1>Access Forbidden</h1><p>Your browser is not supported.</p>";
-        return false;
-      }
-    }
-
-    // Allow access for Gecko (Firefox), WebKit (Safari), and Brave
-    return true;
-  }
-
-  // Call the function on page load
-  window.onload = function() {
-    if (!detectBrowser()) {
-      window.location.href = "denied.html"; // Optionally redirect to a blank page
-    }
-  };
-</script>
-
-
-
 </body>
 </html>

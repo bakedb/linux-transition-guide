@@ -8,3 +8,5 @@
 ## Useful sources that you should use
 - Reddit
 - StackOverflow
+
+I kind of forgot to put more here lol

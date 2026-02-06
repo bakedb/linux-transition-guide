@@ -12,3 +12,6 @@ A list of sources used (besides my prior knowledge), along with some useful comp
 
 ## to_html.py
 Converts the markdown files to html. Requires the markdown library; install with `pip install markdown`.
+
+## /assets
+Pictures and stuff.

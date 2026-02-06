@@ -73,7 +73,7 @@ Another common one is Fedora. Linus Torvalds himself uses Fedora. There aren't m
 
 Lastly, Arch Linux is a pretty common distro, and my personal favorite. Normal Arch Linux is very confusing to set up for inexperienced users, as the ISO just puts you in a command prompt with nothing but some info at the top of the screen and a "Welcome to Arch Linux!" message. However, distros such as Manjaro, Garuda, and CachyOS are based on Arch and have the normal GUI setup that most are used to. The standout feature of Arch Linux and its derivitaves is that it is rolling release, which means that there isn't an "Arch Linux version 19.04" or "version 2025.10.02" release; everything that the system relies on is updated when it needs an update. All you need to do is a quick `sudo pacman -Syu` to fully update the system, and you can restart your computer whenever you want.
 
-For simpliity and ease of use, this guide will show you how to use Linux Mint, which is derived from Ubuntu with Snap packages disabled (the most controvertial part of Ubuntu, as the Snap Store infrastructure is closed-source).
+For simpliity and ease of use, this guide will show you how to use Fedora, which is derived from Ubuntu with Snap packages disabled (the most controvertial part of Ubuntu, as the Snap Store infrastructure is closed-source).
 
 ## What is a desktop environment?
 
@@ -93,6 +93,8 @@ Customizability: ★★★★
 
 Ease of use: ★★★★
 
+Stability: ★★★★
+
 ### Cinnamon
 Cinnamon is the default DE on Linux Mint, and is quite comparable to KDE Plasma. It has a very gentle learning curve and is, again, quite similar to Windows.
 
@@ -101,6 +103,8 @@ Cinnamon is the default DE on Linux Mint, and is quite comparable to KDE Plasma.
 Customizability: ★★
 
 Ease of use: ★★★★★
+
+Stability: ★★★
 
 ### GNOME
 GNOME is quite different compared to most of these; it does not use the normal taskbar layout by default. Instead, it has a dock at the bottom and a menu that comes up with a search bar at the top, the dock, and an application drawer if you scroll down if you press the meta key (the Windows key on most keyboards).
@@ -111,6 +115,8 @@ GNOME is quite different compared to most of these; it does not use the normal t
 Customizability: ★★
 
 Ease of use: ★★★★★
+
+Stability: ★★★
 
 ### Xfce, MATE, and LXQt
 These three are pretty similar, but with some slight differences: Xfce is made to be lightweight and customizable, MATE is made as a continuation of the old GNOME 2 desktop, and LXQt is meant to be efficient and modern-looking, but is not as versatile as Xfce.
@@ -123,9 +129,11 @@ Customizability: ★★ - ★★★★
 
 Ease of use: ★★★ - ★★★★
 
+Stability: ★★ - ★★★★★
+
 As you can see, desktop environments vary quite a lot in functionality and visuals. You will be using Cinnamon for now, but feel free to install another one later.
 
-> **A note about getting GNOME'd:** A common thing that happens to people, especially on Mint, is installing a package that requires the GNOME shell (such as GDM, the GNOME greeter meant to replace SDDM or LightDM; we'll talk about greeters in part 2). This is especially a problem on Mint, because when you install the GNOME shell on an Ubuntu-based system using apt (the Debian package manager), it pulls in the entire Ubuntu session, which is even more unnecesary stuff that you do not need. So if you ever find yourself in GNOME after a restart when you least expect it, this is probably what has happened. To reverse this, just uninstall the GNOME shell.
+> **A note about getting GNOME'd:** A common thing that happens to people is installing a package that requires the GNOME shell (such as GDM, the GNOME greeter meant to replace SDDM or LightDM; we'll talk about greeters in part 2). This is especially a problem on Linux Mint and other Ubuntu-based distros, because when you install the GNOME shell on an Ubuntu-based system using apt (the Debian package manager), it pulls in the entire Ubuntu session, which is even more unnecesary stuff that you do not need. So if you ever find yourself in GNOME after a restart when you least expect it, this is probably what has happened. To reverse this, just uninstall the GNOME shell.
 
 ## Outro
 Congrats, you have finished part 1! You now know the basics of Linux: a bit of history, distros, and desktop environments. You are now ready to move on to part 2 and get installing :3

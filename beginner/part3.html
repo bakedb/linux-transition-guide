@@ -66,14 +66,14 @@
 <h2>Learning the terminal</h2>
 <h3>Moving around directories</h3>
 <p>What? What's a terminal? Calm down, you're only going to be typing like 20 letters total. You can almost always use GUI applications for everything that commands do, but it is always nice to know some of these just in case. Open up the popup menu in the bottom left, search for terminal, and open it. You should see a window come up that shows <code>username@hostname:~$</code>.</p>
-<p><img alt="Empty terminal" src="assets/term1.png" /></p>
+<p><img alt="Empty terminal" src="../assets/term1.png" /></p>
 <blockquote>
 <p>Note that I usually different terminal, a differnt window manager, and a different shell. I usually use the 'fish' shell, but I am using an online terminal emulator (terminux.live) for these examples that is almost identical to the one that you will be using.</p>
 </blockquote>
 <p>Now, type in <code>ls</code>. This lists all files and directories at the current directory, which is currently your home directory, as shown by the ~. You should see an output with some directories such as Documents, Downloads, Videos, Pictures, etc. </p>
-<p><img alt="ls command" src="assets/term2.png" /></p>
+<p><img alt="ls command" src="../assets/term2.png" /></p>
 <p>There should be some hidden directories, too. All hidden directories start with a period, such as <code>.local</code>. To view all files and directories including hidden ones, run <code>ls</code> with the -a flag: <code>ls -a</code>. To go in to one of these directories, use the <code>cd</code> command followed by the directory. Let's go into the Documents folder with <code>cd Documents</code>. Note that everything in Linux is case sensitive. If you ever want to get the full absolute path of where you are, use <code>pwd</code>, which prints the working directory, which in this case is <code>/home/user/Documents</code>. Note that <code>~</code> can be used instead of <code>/home/user</code>.</p>
-<p><img alt="cd and pwd command" src="assets/term3.png" /></p>
+<p><img alt="cd and pwd command" src="../assets/term3.png" /></p>
 <h3>Managing files</h3>
 <p>Now if you run <code>ls</code>, nothing should show up because your documents folder is empty. Let's change that. Use the command <code>touch</code> to make a file. Let's make one called <code>beans.txt</code>. If you think you can figure out how to make the file, go ahead. If you're stumped, the command is <code>touch beans.txt</code>. Easy, right? </p>
 <p>Type <code>cd ..</code> to go up a directory, back to ~. Now, try <code>cat Documents/beans.txt</code>. The <code>cat</code> command basically spits out the contents of the file. In this case, it will output nothing. <code>Documents/beans.txt</code> is using a relative path. Now let's try using an absolute path. Go back into Documents with <code>cd Documents</code>, then make a new file in the Downloads directory with <code>~/Downloads/beans2.txt</code>. If you were to run <code>cat Downloads/beans2.txt</code> (without the ~), that would be a relative path and would try to read the file in <code>~/Documents/Downloads/beans3.txt</code>. Now to edit one of these files, you can use the editor built into the Linux kernel called nano. Make sure that you are in <code>~/Documents</code> first, then type in <code>nano beans.txt</code>. It should open up an editor window. Type in anything you want, I did "Hello World!". Hit ctrl+o then enter to save, and ctrl+x to exit. Now if you do <code>cat beans.txt</code>, you should see something like this:</p>
@@ -120,7 +120,24 @@ rm: cannot remove 'test-subfolder': Is a directory
 <p>Linux Mint does not have something called Snap packages. This is due to their proprietary nature from Canonical (the creators of Ubuntu), so they are disabled on all Mint systems by default. I wouldn't use Snap packages or the Snap Store myself, but if you really need to, run <code>sudo rm /etc/apt/preferences.d/nosnap.pref &amp;&amp; apt update &amp;&amp; apt install snapd</code> to get rid of the thing blocking Snap and download Snap Store. Also, you can use &amp;&amp; to chain commands, and <code>x || y</code> to only trigger command y if x returns an error (returns an exit code not equal to 0).</p>
 </blockquote>
 <h2>Outro</h2>
-<p>Great, you learned some essential terminal commands and installed your first few packages. I hope you are enjoying Linux so far, and there may or may not be a part 4 of this guide. You might want to go check :3</p>
-<p>Either way, you have officially completed the beginner's course! You can go use your computer in peace now knowing that Microsoft is no longer breathing down your back, or you can go check out the other parts of the guide to learn some more advanced stuff.</p>
+<p>Great, you learned some essential terminal commands and installed your first few packages. I hope you are enjoying Linux so far, and there may or may not be a part 4 of this guide. You might want to go check :3
+advanced
+Either way, you have officially completed the beginner's course! Click the button below to unlock the next section of this guide.</p>
+<p><button onclick="setAdvancedCookie()">Unlock Advanced Section</button>
+<button onclick="resetAdvancedCookie()">Reset Advanced Content</button></p>
+<script>
+function setAdvancedCookie() {
+    document.cookie = "advanced_unlocked=true; path=/; max-age=31536000"; // 1 year expiry
+    alert('Advanced section unlocked! You can now access advanced content from the main page.');
+    window.location.href = '../index.html';
+}
+
+function resetAdvancedCookie() {
+    document.cookie = "advanced_unlocked=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    alert('Advanced content has been reset. Please refresh the main page to see the changes.');
+}
+</script>
+<p>(Note that this button adds a cookie to your browser to show the next section in the main page. If you are using a locked down browser such as LibreWolf, locked down Firefox, Tor, etc., you may not be able to unlock the next section. If this is the case, you can manually enable cookies for this site or just go to ltg.bkd.lol/advanced/part[number])</p>
+<p>You can go use your computer in peace now knowing that Microsoft is no longer breathing down your back, or you can go check out the other parts of the guide to learn some more advanced stuff.</p>
 <p>If you ever need anything (or you screwed up really bad), DM me on Discord at thatbakedbeans, or send an email to thatbakedbeans@proton.me. Otherwise, Reddit is a good source of help (most of the time).</p></body>
 </html>

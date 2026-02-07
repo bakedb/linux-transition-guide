@@ -8,17 +8,17 @@ Don't panic after seeing that title; this part is going to be nice and easy. You
 ### Moving around directories
 What? What's a terminal? Calm down, you're only going to be typing like 20 letters total. You can almost always use GUI applications for everything that commands do, but it is always nice to know some of these just in case. Open up the popup menu in the bottom left, search for terminal, and open it. You should see a window come up that shows `username@hostname:~$`.
 
-![Empty terminal](assets/term1.png)
+![Empty terminal](../assets/term1.png)
 
 > Note that I usually different terminal, a differnt window manager, and a different shell. I usually use the 'fish' shell, but I am using an online terminal emulator (terminux.live) for these examples that is almost identical to the one that you will be using.
 
  Now, type in `ls`. This lists all files and directories at the current directory, which is currently your home directory, as shown by the ~. You should see an output with some directories such as Documents, Downloads, Videos, Pictures, etc. 
  
- ![ls command](assets/term2.png)
+ ![ls command](../assets/term2.png)
 
  There should be some hidden directories, too. All hidden directories start with a period, such as `.local`. To view all files and directories including hidden ones, run `ls` with the -a flag: `ls -a`. To go in to one of these directories, use the `cd` command followed by the directory. Let's go into the Documents folder with `cd Documents`. Note that everything in Linux is case sensitive. If you ever want to get the full absolute path of where you are, use `pwd`, which prints the working directory, which in this case is `/home/user/Documents`. Note that `~` can be used instead of `/home/user`.
 
-![cd and pwd command](assets/term3.png)
+![cd and pwd command](../assets/term3.png)
 
 ### Managing files
 Now if you run `ls`, nothing should show up because your documents folder is empty. Let's change that. Use the command `touch` to make a file. Let's make one called `beans.txt`. If you think you can figure out how to make the file, go ahead. If you're stumped, the command is `touch beans.txt`. Easy, right? 
@@ -87,7 +87,25 @@ Now, you don't always have to install packages with the terminal. You can use th
 
 ## Outro
 Great, you learned some essential terminal commands and installed your first few packages. I hope you are enjoying Linux so far, and there may or may not be a part 4 of this guide. You might want to go check :3
+advanced
+Either way, you have officially completed the beginner's course! Click the button below to unlock the next section of this guide.
 
-Either way, you have officially completed the beginner's course! You can go use your computer in peace now knowing that Microsoft is no longer breathing down your back, or you can go check out the other parts of the guide to learn some more advanced stuff.
+<button onclick="setAdvancedCookie()">Unlock Advanced Section</button>
+<button onclick="resetAdvancedCookie()">Reset Advanced Content</button>
+<script>
+function setAdvancedCookie() {
+    document.cookie = "advanced_unlocked=true; path=/; max-age=31536000"; // 1 year expiry
+    alert('Advanced section unlocked! You can now access advanced content from the main page.');
+    window.location.href = '../index.html';
+}
+
+function resetAdvancedCookie() {
+    document.cookie = "advanced_unlocked=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    alert('Advanced content has been reset. Please refresh the main page to see the changes.');
+}
+</script>
+(Note that this button adds a cookie to your browser to show the next section in the main page. If you are using a locked down browser such as LibreWolf, locked down Firefox, Tor, etc., you may not be able to unlock the next section. If this is the case, you can manually enable cookies for this site or just go to ltg.bkd.lol/advanced/part[number])
+
+ You can go use your computer in peace now knowing that Microsoft is no longer breathing down your back, or you can go check out the other parts of the guide to learn some more advanced stuff.
 
 If you ever need anything (or you screwed up really bad), DM me on Discord at thatbakedbeans, or send an email to thatbakedbeans@proton.me. Otherwise, Reddit is a good source of help (most of the time).

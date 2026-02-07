@@ -1,3 +1,3 @@
 # TODO
-- Switching distros guide
-- Change blockquote CSS
+- Mention Window Managers along with DEs
+- Add logos to distro hopping

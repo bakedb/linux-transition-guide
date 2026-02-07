@@ -66,5 +66,66 @@
 <li>Preparing for a distro switch</li>
 <li>Switching distros</li>
 <li>A large list of distros and what they provide</li>
-</ul></body>
+</ul>
+<h2>Preparing for your switch</h2>
+<p>Assuming that you have a seperate home directory, switching should just be as simple as installing the new distro on your root partition overwriting the old one, and assigning your home partition during installation. Note that not all distro installation processes allow you to set seperate home and root partitions or link in existing ones, but most do.</p>
+<p>If you did not set a seperate home partiton, just back everything up to a USB drive or something and put it back after your are done installing.</p>
+<blockquote>
+<p><strong>Backups are important!</strong> No matter if you set up a seperate home partition or not, if you have data that you care about, back it up! Better safe than sorry.</p>
+</blockquote>
+<h2>What transfers across distros?</h2>
+<p>Assuming you transfered your home directory:
+- Files (Documents, Downloads, Videos, etc.)
+- Applications installed in the home partition (most are not by default)
+- Configurations and other data for apps that were previously installed</p>
+<p>For example, Firefox normally stores its configuration in <code>~/.var/app/org.mozilla.firefox/.mozilla</code> when installed as a Flatpak, and this location should be in your home partition. So, if you were to hop distros and install the Firefox Flatpak on your new installation, your config should transfer and you will have your old extensions, bookmarks, history, etc.</p>
+<p>What does not transfer:
+- Applications (but most data is saved. You just need to reinstall the application)
+- Anything saved to root (/)</p>
+<h2>A big list of distros</h2>
+<p>Below is a big list of Linux distributions that I think you might be interested in. The name is listed, then what it is based off of, the default DE, my short description of it, its use case, and my "should you try it", or SYTI, ranking (which assumes that your knowledge of Linux is as extensive as what was covered in the beginner section of the guide).</p>
+<blockquote>
+<p>If you want to look into more yourself, go to <a href="https://distrowatch.com/">https://distrowatch.com/</a>. There is a massive list of distributions there. Some that you have definitely heard of, and some that only like 2 people have probably ever used. It's a pretty interesting resource.</p>
+</blockquote>
+<p>These are taken from some of the top entries of the Year 2025 Page Hit Ranking on DistroWatch.</p>
+<h3>CachyOS</h3>
+<p>Base: Arch</p>
+<p>Default DE: Multiple (you choose during installation)</p>
+<p>Distro built for speed and hardware optimizations. Has a modified Linux kernel for maximum performance.</p>
+<p>SYTI: Yes</p>
+<h3>Linux Mint</h3>
+<p>Base: Ubuntu (Debian)</p>
+<p>Default DE: Cinnamon</p>
+<p>Other available flavors: Linux Mint Debian Edition (Debian-based instead of Ubuntu), MATE Edition, Xfce Edition</p>
+<p>Made for beginners. Structured to be easy to understand. Some may consider it bloated (but pales in comparison to Windows bloat) with a lot of preinstalled stuff. Against Snap packages and the Snap Store.</p>
+<p>SYTI: No, unless you are an absolute beginner (and there are still places that are just as good to start at)</p>
+<h3>MX Linux</h3>
+<p>Base: antiX (Debian)</p>
+<p>Default DE: Fluxbox, KDE Plasma, Xfce</p>
+<p>Made with slower systems and systems like the Raspberry Pi in mind.</p>
+<p>SYTI: Yes, if you have a less performant system</p>
+<h3>Debian</h3>
+<p>Base: None</p>
+<p>Default DE: You choose during setup, but GNOME is checked by default</p>
+<p>Older distro that many others are based on. Known for being very stable. No extra bells or whistles.</p>
+<p>SYTI: Yes, if you need a very stable system.</p>
+<h3>EndeavourOS</h3>
+<p>Base: Arch</p>
+<p>Default DE: Multiple (you choose during setup). Offline installer chooses KDE Plasma by default.</p>
+<p>Other available flavors: Community spins with other window managers.</p>
+<p>Terminal-centric with Nvidia drivers baked in.</p>
+<p>SYTI: Yes, if you have an Nvidia GPU and want an Arch-based system that works out of the box.</p>
+<p>This document is incomplete.
+Todo:
+https://distrowatch.com/table.php?distribution=popos
+https://distrowatch.com/table.php?distribution=manjaro
+https://distrowatch.com/table.php?distribution=ubuntu
+https://distrowatch.com/table.php?distribution=fedora
+https://distrowatch.com/table.php?distribution=zorin
+https://distrowatch.com/table.php?distribution=opensuse
+https://distrowatch.com/table.php?distribution=elementary
+https://distrowatch.com/table.php?distribution=nixos
+https://distrowatch.com/table.php?distribution=garuda
+https://distrowatch.com/table.php?distribution=kali
+https://distrowatch.com/table.php?distribution=arch</p></body>
 </html>

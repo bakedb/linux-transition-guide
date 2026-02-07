@@ -130,7 +130,6 @@ rm: cannot remove 'test-subfolder': Is a directory
 <button onclick="resetIntermediateCookie()">Reset Intermediate Content</button></p>
 <script>
 function setIntermediateCookie() {
-    document.cookie = "intermediate_unlocked=true; path=/; max-age=31536000"; // 1 year expiry
     alert('Intermediate section unlocked! You can now access intermediate content from the main page.');
     window.location.href = '../index.html';
 }

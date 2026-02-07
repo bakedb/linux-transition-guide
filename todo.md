@@ -1,3 +1,3 @@
 # TODO
 - Switching distros guide
-- Override background color
+- Change blockquote CSS

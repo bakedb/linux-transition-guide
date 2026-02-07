@@ -1,1 +1,0 @@
-# Linux Transition Guide: Distro Hopping

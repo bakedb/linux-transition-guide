@@ -35,7 +35,7 @@
         .level-tag.beginner {
             background-color: #4CAF50;
         }
-        .level-tag.advanced {
+        .level-tag.intermediate {
             background-color: #FF9800;
         }
     </style>
@@ -65,9 +65,9 @@
             return null;
         }
 
-        function resetAdvancedCookie() {
-            document.cookie = "advanced_unlocked=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-            alert('Advanced content has been reset. Please refresh the page to see the changes.');
+        function resetIntermediateCookie() {
+            document.cookie = "intermediate_unlocked=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+            alert('Intermediate content has been reset. Please refresh the page to see the changes.');
             location.reload();
         }
 
@@ -81,7 +81,7 @@
             .then(data => {
                 const fileList = document.getElementById('file-list');
                 const files = data.split('\n').filter(file => file.trim() !== '');
-                const advancedUnlocked = getCookie('advanced_unlocked') === 'true';
+                const intermediateUnlocked = getCookie('intermediate_unlocked') === 'true';
                 
                 if (files.length === 0) {
                     fileList.innerHTML = '<p>No files listed in index.txt.</p>';
@@ -89,8 +89,8 @@
                     files.forEach(file => {
                         const parsed = parseIndexLine(file);
                         if (parsed) {
-                            // Show beginner files always, advanced only if unlocked
-                            if (parsed.level === 'beginner' || (parsed.level === 'advanced' && advancedUnlocked)) {
+                            // Show beginner files always, intermediate only if unlocked
+                            if (parsed.level === 'beginner' || (parsed.level === 'intermediate' && intermediateUnlocked)) {
                                 const widget = document.createElement('div');
                                 widget.className = 'widget';
                                 widget.innerHTML = `

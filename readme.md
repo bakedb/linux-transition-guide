@@ -1,4 +1,7 @@
 # Linux Transition Guide
+
+Go [here](https://ltg.bkd.lol) for the production version of the site.
+
 This repository includes:
 
 ## part{x}.md

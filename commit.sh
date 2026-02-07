@@ -1,5 +1,6 @@
 #!/bin/bash
-# Auto-generated commit script - 2026-02-06 19:10:25
+# Auto-generated commit script - 2026-02-06 20:50:48
+# Go to commitgen.bkd.lol to make your own!
 
 set -e  # Exit on any error
 
@@ -28,8 +29,8 @@ print_info "Commit message: $COMMIT_MSG"
 
 # Pre-commands
 print_info "Running pre-commands..."
-print_info "Running: python to_html.py beginner/*.md"
-eval "python to_html.py beginner/*.md" || {
+print_info "Running: python to_html.py beginner/*.md advanced/*.md"
+eval "python to_html.py beginner/*.md advanced/*.md" || {
     print_error "Pre-command failed: $CMD"
     exit 1
 }
@@ -56,8 +57,8 @@ git checkout main
 # Push to repositories
 print_info "Pushing to https://github.com/bakedb/linux-transition-guide.git main..."
 git push https://github.com/bakedb/linux-transition-guide.git main
-print_info "Pushing to https://codeberg.org/bkd/linux-transition-guide.git main..."
-git push https://codeberg.org/bkd/linux-transition-guide.git main
+print_info "Pushing to https://codeberg.com/bkd/linux-transition-guide.git main..."
+git push https://codeberg.com/bkd/linux-transition-guide.git main
 print_success "Push completed"
 
 print_success "Commit script completed successfully!"

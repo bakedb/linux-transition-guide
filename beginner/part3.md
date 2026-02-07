@@ -94,7 +94,6 @@ Either way, you have officially completed the beginner's course! Click the butto
 <button onclick="resetAdvancedCookie()">Reset Advanced Content</button>
 <script>
 function setAdvancedCookie() {
-    document.cookie = "advanced_unlocked=true; path=/; max-age=31536000"; // 1 year expiry
     alert('Advanced section unlocked! You can now access advanced content from the main page.');
     window.location.href = '../index.html';
 }

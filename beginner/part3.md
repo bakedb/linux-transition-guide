@@ -81,29 +81,29 @@ Open your terminal once again and type in `sudo apt update` or `sudo dnf update`
 
 > If you want to have fastfetch run each time you open a terminal, you can edit your `bashrc` file. To do so, run `nano ~/.bashrc`, put `fastfetch` at the bottom, save with ctrl+o then enter, and exit with ctrl+x. Now, fastfetch should run each time you start a bash session!
 
-You don't always have to install packages with the terminal. You can use the store built in to your distro, which is either GNOME Software (for Debian and Fedora on GNOME), Software Manager (Mint Exclusive), or Discover (for anything with KDE Plasma). Just open the popup menu and search for "store" (definitely because I have not used Mint at all for a year and am not even using it while writing this guide and therefore forgot what the store was called... definitely not). Open up the app store, and search for an application (such as prismlauncher if you want to play some Minecraft, or Steam if you want to play some not Minecraft) and hit download. There you go, you just installed an application without even touching one of those nerdy terminal things.
+You don't always have to install packages with the terminal. You can use the store built in to your distro, which is either GNOME Software (for Debian and Fedora on GNOME), Software Manager (Mint Exclusive), or Discover (for anything with KDE Plasma). Just search for "store" and you should find it. Open up the app store, and search for an application (such as prismlauncher if you want to play some Minecraft, or Steam if you want to play some not Minecraft) and hit download. There you go, you just installed an application without even touching one of those nerdy terminal things.
 
-> Linux Mint does not have something called Snap packages. This is due to their proprietary nature from Canonical (the creators of Ubuntu), so they are disabled on all Mint systems by default. I wouldn't use Snap packages or the Snap Store myself, but if you really need to, run `sudo rm /etc/apt/preferences.d/nosnap.pref && apt update && apt install snapd` to get rid of the thing blocking Snap and download Snap Store. Also, you can use && to chain commands, and `x || y` to only trigger command y if x returns an error (returns an exit code not equal to 0).
+> Ubuntu uses something called the Snap Store, which you may be able to guess, distributes Snap packages, and is maintained by Canonical, the creators of Ubuntu. Snap packages are basically Flatpak packages but with a proprietary backend. Due to the closed source nature of Snap packages, Linux Mint and some other Ubuntu-based distos have them disabled. I wouldn't use Snap packages or the Snap Store myself, but if you really need to, run `sudo rm /etc/apt/preferences.d/nosnap.pref && apt update && apt install snapd` to get rid of the thing blocking Snap and download Snap Store. Also, you can use && to chain commands, and `x || y` to only trigger command y if x returns an error (returns an exit code not equal to 0).
 
 ## Outro
 Great, you learned some essential terminal commands and installed your first few packages. I hope you are enjoying Linux so far, and there may or may not be a part 4 of this guide. You might want to go check :3
-advanced
+
 Either way, you have officially completed the beginner's course! Click the button below to unlock the next section of this guide.
 
-<button onclick="setAdvancedCookie()">Unlock Advanced Section</button>
-<button onclick="resetAdvancedCookie()">Reset Advanced Content</button>
+<button onclick="setIntermediateCookie()">Unlock Intermediate Section</button>
+<button onclick="resetIntermediateCookie()">Reset Intermediate Content</button>
 <script>
-function setAdvancedCookie() {
-    alert('Advanced section unlocked! You can now access advanced content from the main page.');
+function setIntermediateCookie() {
+    alert('Intermediate section unlocked! You can now access intermediate content from the main page.');
     window.location.href = '../index.html';
 }
 
-function resetAdvancedCookie() {
-    document.cookie = "advanced_unlocked=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-    alert('Advanced content has been reset. Please refresh the main page to see the changes.');
+function resetIntermediateCookie() {
+    document.cookie = "intermediate_unlocked=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    alert('Intermediate content has been reset. Please refresh the main page to see the changes.');
 }
 </script>
-(Note that this button adds a cookie to your browser to show the next section in the main page. If you are using a locked down browser such as LibreWolf, locked down Firefox, Tor, etc., you may not be able to unlock the next section. If this is the case, you can manually enable cookies for this site or just go to ltg.bkd.lol/advanced/part[number])
+(Note that this button adds a cookie to your browser to show the next section in the main page. If you are using a locked down browser such as LibreWolf, locked down Firefox, Tor, etc., you may not be able to unlock the next section. If this is the case, you can manually enable cookies for this site or just go to ltg.bkd.lol/intermediate/part[number])
 
  You can go use your computer in peace now knowing that Microsoft is no longer breathing down your back, or you can go check out the other parts of the guide to learn some more advanced stuff.
 

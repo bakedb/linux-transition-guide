@@ -29,8 +29,8 @@ print_info "Commit message: $COMMIT_MSG"
 
 # Pre-commands
 print_info "Running pre-commands..."
-print_info "Running: python to_html.py beginner/*.md advanced/*.md"
-eval "python to_html.py beginner/*.md advanced/*.md" || {
+print_info "Running: python to_html.py */*.md"
+eval "python to_html.py */*.md" || {
     print_error "Pre-command failed: $CMD"
     exit 1
 }

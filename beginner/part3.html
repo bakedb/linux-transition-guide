@@ -34,9 +34,13 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
     blockquote {
-        border-left: 4px solid #666;
+        border: 4px solid #2d813e;
         padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         margin: 20px 0;
+        background-color: #052a0e;
         font-style: italic;
         color: #ccc;
     }
@@ -57,7 +61,7 @@
 </head>
 <body><h1>Linux Transition Guide Part 3: Learning the Terminal</h1>
 <h2>Intro</h2>
-<p>Don't panic after seeing that title; this part is going to be nice and easy. You are going to learn some nice, short commands, and learn how to install (and uninstall) packages.</p>
+<p>Don't panic after seeing that title; this part is going to be easy. You are going to learn some nice, short commands, and learn how to install and uninstall packages.</p>
 <h2>What this part will cover</h2>
 <ul>
 <li>Essential commands</li>
@@ -65,17 +69,17 @@
 </ul>
 <h2>Learning the terminal</h2>
 <h3>Moving around directories</h3>
-<p>What? What's a terminal? Calm down, you're only going to be typing like 20 letters total. You can almost always use GUI applications for everything that commands do, but it is always nice to know some of these just in case. Open up the popup menu in the bottom left, search for terminal, and open it. You should see a window come up that shows <code>username@hostname:~$</code>.</p>
+<p>What? What's a terminal? I thought we weren't going to be using those! Calm down, you're only going to be typing like 20 letters. You can almost always use GUI (graphical user interface) applications for everything that these commands do, but it is always nice to know some of these just in case. Open up whatever menu you use for searching (the bottom-left menu on Plasma and Cinnamon, the top search bar or app drawer in GNOME), search for a terminal (Konsole on Plasma, GNOME Terminal on GNOME and Cinnamon), and open it. You should see a window come up that shows <code>username@hostname:~$</code>.</p>
 <p><img alt="Empty terminal" src="../assets/term1.png" /></p>
 <blockquote>
-<p>Note that I usually different terminal, a differnt window manager, and a different shell. I usually use the 'fish' shell, but I am using an online terminal emulator (terminux.live) for these examples that is almost identical to the one that you will be using.</p>
+<p>Note that I usually use a different terminal, a differnt window manager, and a different shell. I usually use the 'fish' shell, but I am using an online terminal emulator (terminux.live) for some of these examples that is almost identical to the one that you will be using.</p>
 </blockquote>
 <p>Now, type in <code>ls</code>. This lists all files and directories at the current directory, which is currently your home directory, as shown by the ~. You should see an output with some directories such as Documents, Downloads, Videos, Pictures, etc. </p>
 <p><img alt="ls command" src="../assets/term2.png" /></p>
 <p>There should be some hidden directories, too. All hidden directories start with a period, such as <code>.local</code>. To view all files and directories including hidden ones, run <code>ls</code> with the -a flag: <code>ls -a</code>. To go in to one of these directories, use the <code>cd</code> command followed by the directory. Let's go into the Documents folder with <code>cd Documents</code>. Note that everything in Linux is case sensitive. If you ever want to get the full absolute path of where you are, use <code>pwd</code>, which prints the working directory, which in this case is <code>/home/user/Documents</code>. Note that <code>~</code> can be used instead of <code>/home/user</code>.</p>
 <p><img alt="cd and pwd command" src="../assets/term3.png" /></p>
 <h3>Managing files</h3>
-<p>Now if you run <code>ls</code>, nothing should show up because your documents folder is empty. Let's change that. Use the command <code>touch</code> to make a file. Let's make one called <code>beans.txt</code>. If you think you can figure out how to make the file, go ahead. If you're stumped, the command is <code>touch beans.txt</code>. Easy, right? </p>
+<p>Now if you run <code>ls</code>, nothing should show up because your documents folder is empty. Let's change that. Use the command <code>touch</code> to make a file. Let's make one called <code>beans.txt</code>. If you think you can figure out how to make the file, go ahead. If you're stumped, the command is <code>touch beans.txt</code>. Easy so far, right? </p>
 <p>Type <code>cd ..</code> to go up a directory, back to ~. Now, try <code>cat Documents/beans.txt</code>. The <code>cat</code> command basically spits out the contents of the file. In this case, it will output nothing. <code>Documents/beans.txt</code> is using a relative path. Now let's try using an absolute path. Go back into Documents with <code>cd Documents</code>, then make a new file in the Downloads directory with <code>~/Downloads/beans2.txt</code>. If you were to run <code>cat Downloads/beans2.txt</code> (without the ~), that would be a relative path and would try to read the file in <code>~/Documents/Downloads/beans3.txt</code>. Now to edit one of these files, you can use the editor built into the Linux kernel called nano. Make sure that you are in <code>~/Documents</code> first, then type in <code>nano beans.txt</code>. It should open up an editor window. Type in anything you want, I did "Hello World!". Hit ctrl+o then enter to save, and ctrl+x to exit. Now if you do <code>cat beans.txt</code>, you should see something like this:</p>
 <p><code>bash
 [user@bean-machine Documents]$ cat beans.txt
@@ -87,7 +91,7 @@ beans.txt
 [user@bean-machine test]$ rm beans.txt
 [user@bean-machine test]$ ls
 [user@bean-machine test]$</code></p>
-<p>To make a directory (what is otherwise called a folder), use the <code>mkdir</code> command.</p>
+<p>To make a directory (what you might call a folder), use the <code>mkdir</code> command.</p>
 <p><code>bash
 [user@bean-machine Downloads]$ mkdir test
 [user@bean-machine Downloads]$ cd test
@@ -98,46 +102,45 @@ test-subfolder
 [user@bean-machine test]$ rm test-subfolder
 rm: cannot remove 'test-subfolder': Is a directory
 [user@bean-machine test]$ rm -rf test-subfolder</code></p>
-<p>To remove a directory, use the <code>rm</code> command with the -rf flag. Again, be <strong>very</strong> careful with this! Some people try to troll noobs by telling you to run <code>sudo rm -rf ~/</code>, which deletes your entire home directory. <strong>NEVER RUN THAT COMMAND!</strong></p>
+<p>To remove a directory, use the <code>rm</code> command with the -rf flag as shown above. Again, be <strong>very</strong> careful with this! Some people try to troll noobs by telling you to run <code>sudo rm -rf ~/</code>, which deletes your entire home directory. <strong>Never run that command!</strong> If you do fall for it, I will judge you profusely.</p>
 <h3>Other commands</h3>
-<p>To execute a script, use <code>./path-to-script.sh</code>.</p>
+<p>To execute a script, use <code>.</code> followed by the script to be executed (usually a .sh file).</p>
 <p><code>bash
 [user@bean-machine test]$ ./install.sh</code></p>
-<p>To make a script executable, use the <code>chmod</code> command with +x.</p>
+<p>When you make a file, it is not executable by default. For example, if you run <code>touch script.sh</code>, <code>nano script.sh</code>, add to the file, then try to run it with <code>./script.sh</code>, it would tell you that the script is not executable. To make a script executable, use the <code>chmod</code> command with +x.</p>
 <p><code>bash
 [user@bean-machine test]$ chmod +x install.sh</code></p>
 <h3>About the superuser</h3>
-<p>You should almost always be logged in to your session with a normal user, which has permission to change anything in that user's home directory (anything under <code>/home/user</code> or <code>~/</code>). The superuser or root user can modify anything. You should never run your session as the superuser, as it can introduce many security risks. Besides, most distros don't even expose the option to do so by default anyway. If you need to run a command as a superuser to, for example, edit a file that is outside of your home directory or install a package using your package manager, you can grant elevated permissions to a command by prefixing it with <code>sudo</code>. For example, if you do not have permission to edit <code>/etc/example/config.json</code>, you would need to use <code>sudo nano /etc/example/config.json</code>. Remember to use sudo wisely and understand the commands that you are running!</p>
-<p>Lastly, if you are ever stumped about what a command does, prefix it with <code>man</code>, short for manual. You may need to install the man package manually, but it is a helpful tool if your web browser is too slow to look stuff up.</p>
+<p>You should almost always be logged in to your session with a normal user, which has permission to change anything in that user's home directory (anything under <code>/home/user/</code> or <code>~/</code>). The superuser, also known as the root user, can modify anything. You should never run your session as the superuser, as it can introduce many security risks. Besides, most distros don't even expose the option to do so by default anyway. If you need to run a command as a superuser to, for example, edit a file that is outside of your home directory or install a package using your package manager, you can grant elevated permissions to a command by prefixing it with <code>sudo</code>. For example, if you do not have permission to edit <code>/etc/example/config.json</code>, you would need to use <code>sudo nano /etc/example/config.json</code>. Remember to use sudo wisely and understand the commands that you are running!</p>
+<p>Lastly, if you are ever stumped about what a command does, prefix it with <code>man</code>, short for manual. You may need to install the man package manually, but it is a helpful tool if your web browser is too slow to look stuff up (or you just don't want to).</p>
 <h2>Installing your first package</h2>
-<p>Now to make your system actually useful. First, we will install a package using <code>apt</code>, then you will open the GUI store to get one in a more simple and easy manner.</p>
-<p>Open your terminal once again and type in <code>sudo apt install fastfetch</code>. It should ask you for your password (because you used sudo), then install the package. Once it has finished (assuming that it did not fail), run <code>fastfetch</code>, and you will get a cool screen that displays your system stats!</p>
+<p>Now to make your system actually useful. First, we will install a package using <code>apt</code> for Debian (and Mint, because Mint is Ubuntu based, and Ubuntu is Debian based) or <code>dnf</code> for Fedora, then you will open the GUI store to get one in a more simple and easy manner.</p>
+<p>Open your terminal once again and type in <code>sudo apt update</code> or <code>sudo dnf update</code> to update your system. You should always try this if things are not working as expected or if you have not done it in a while. Next, put in <code>sudo apt install fastfetch</code> or <code>sudo dnf install fastfetch</code>. It should ask you for your password (because you used sudo), then it should install the package. Once it has finished (assuming that it did not fail), run <code>fastfetch</code> in your terminal, and you will get a cool screen that displays your system stats!</p>
 <blockquote>
-<p>If you want to have fastfetch to run each time you open a terminal, you can edit your <code>bashrc</code> file. To do so, run <code>nano ~/.bashrc</code>, put <code>fastfetch</code> at the bottom, then save. Now, it should run each time you start a bash session!</p>
+<p>If you want to have fastfetch run each time you open a terminal, you can edit your <code>bashrc</code> file. To do so, run <code>nano ~/.bashrc</code>, put <code>fastfetch</code> at the bottom, save with ctrl+o then enter, and exit with ctrl+x. Now, fastfetch should run each time you start a bash session!</p>
 </blockquote>
-<p>Now, you don't always have to install packages with the terminal. You can use the store built in to Mint. Just open the popup menu and search for "store" (definitely because I have not used Mint at all for a year and am not even using it while writing this guide and therefore forgot what the store was called... definitely not). Open up the app store, and search for an application (such as prismlauncher if you want to play some Minecraft, or Steam if you want to play some not Minecraft) and hit download. There you go, you just installed an application without even touching one of those nerdy terminal things.</p>
+<p>You don't always have to install packages with the terminal. You can use the store built in to your distro, which is either GNOME Software (for Debian and Fedora on GNOME), Software Manager (Mint Exclusive), or Discover (for anything with KDE Plasma). Just search for "store" and you should find it. Open up the app store, and search for an application (such as prismlauncher if you want to play some Minecraft, or Steam if you want to play some not Minecraft) and hit download. There you go, you just installed an application without even touching one of those nerdy terminal things.</p>
 <blockquote>
-<p>Linux Mint does not have something called Snap packages. This is due to their proprietary nature from Canonical (the creators of Ubuntu), so they are disabled on all Mint systems by default. I wouldn't use Snap packages or the Snap Store myself, but if you really need to, run <code>sudo rm /etc/apt/preferences.d/nosnap.pref &amp;&amp; apt update &amp;&amp; apt install snapd</code> to get rid of the thing blocking Snap and download Snap Store. Also, you can use &amp;&amp; to chain commands, and <code>x || y</code> to only trigger command y if x returns an error (returns an exit code not equal to 0).</p>
+<p>Ubuntu uses something called the Snap Store, which you may be able to guess, distributes Snap packages, and is maintained by Canonical, the creators of Ubuntu. Snap packages are basically Flatpak packages but with a proprietary backend. Due to the closed source nature of Snap packages, Linux Mint and some other Ubuntu-based distos have them disabled. I wouldn't use Snap packages or the Snap Store myself, but if you really need to, run <code>sudo rm /etc/apt/preferences.d/nosnap.pref &amp;&amp; apt update &amp;&amp; apt install snapd</code> to get rid of the thing blocking Snap and download Snap Store. Also, you can use &amp;&amp; to chain commands, and <code>x || y</code> to only trigger command y if x returns an error (returns an exit code not equal to 0).</p>
 </blockquote>
 <h2>Outro</h2>
-<p>Great, you learned some essential terminal commands and installed your first few packages. I hope you are enjoying Linux so far, and there may or may not be a part 4 of this guide. You might want to go check :3
-advanced
-Either way, you have officially completed the beginner's course! Click the button below to unlock the next section of this guide.</p>
-<p><button onclick="setAdvancedCookie()">Unlock Advanced Section</button>
-<button onclick="resetAdvancedCookie()">Reset Advanced Content</button></p>
+<p>Great, you learned some essential terminal commands and installed your first few packages. I hope you are enjoying Linux so far, and there may or may not be a part 4 of this guide. You might want to go check :3</p>
+<p>Either way, you have officially completed the beginner's course! Click the button below to unlock the next section of this guide.</p>
+<p><button onclick="setIntermediateCookie()">Unlock Intermediate Section</button>
+<button onclick="resetIntermediateCookie()">Reset Intermediate Content</button></p>
 <script>
-function setAdvancedCookie() {
-    document.cookie = "advanced_unlocked=true; path=/; max-age=31536000"; // 1 year expiry
-    alert('Advanced section unlocked! You can now access advanced content from the main page.');
+function setIntermediateCookie() {
+    document.cookie = "intermediate_unlocked=true; path=/; max-age=31536000"; // 1 year expiry
+    alert('Intermediate section unlocked! You can now access intermediate content from the main page.');
     window.location.href = '../index.html';
 }
 
-function resetAdvancedCookie() {
-    document.cookie = "advanced_unlocked=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-    alert('Advanced content has been reset. Please refresh the main page to see the changes.');
+function resetIntermediateCookie() {
+    document.cookie = "intermediate_unlocked=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    alert('Intermediate content has been reset. Please refresh the main page to see the changes.');
 }
 </script>
-<p>(Note that this button adds a cookie to your browser to show the next section in the main page. If you are using a locked down browser such as LibreWolf, locked down Firefox, Tor, etc., you may not be able to unlock the next section. If this is the case, you can manually enable cookies for this site or just go to ltg.bkd.lol/advanced/part[number])</p>
+<p>(Note that this button adds a cookie to your browser to show the next section in the main page. If you are using a locked down browser such as LibreWolf, locked down Firefox, Tor, etc., you may not be able to unlock the next section. If this is the case, you can manually enable cookies for this site or just go to ltg.bkd.lol/intermediate/part[number])</p>
 <p>You can go use your computer in peace now knowing that Microsoft is no longer breathing down your back, or you can go check out the other parts of the guide to learn some more advanced stuff.</p>
 <p>If you ever need anything (or you screwed up really bad), DM me on Discord at thatbakedbeans, or send an email to thatbakedbeans@proton.me. Otherwise, Reddit is a good source of help (most of the time).</p></body>
 </html>

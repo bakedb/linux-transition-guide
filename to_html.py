@@ -79,9 +79,13 @@ def to_html_file(input_file):
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }}
     blockquote {{
-        border-left: 4px solid #666;
+        border: 4px solid #2d813e;
         padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         margin: 20px 0;
+        background-color: #052a0e;
         font-style: italic;
         color: #ccc;
     }}

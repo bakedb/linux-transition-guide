@@ -1,3 +1,7 @@
+---
+background-color: #3a1111ff
+---
+
 # Linux Transition Guide Part 2.1: Installing Debian
 
 Go to https://www.debian.org/ to get your Debian ISO.

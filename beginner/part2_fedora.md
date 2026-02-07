@@ -1,3 +1,7 @@
+---
+background-color: #132d44ff
+---
+
 # Linux Transition Guide Part 2.1: Installing Fedora
 Go to https://fedoraproject.org/#editions to get your Fedora ISO. For now, you have a choice between the first two options: Fedora Workstation, and Fedora KDE Plasma Desktop. Workstation has the GNOME DE by default, while the KDE Plasma Desktop version has KDE Plasma by default. Of course, you can always switch out the DE later, but for now you have a choice between the two of these (there are more spins with other default DEs, but we are just focusing on these two for simplicity). You can refer back to part 1 for the differences between GNOME and Plasma (Plasma is my personal favorite, but you can choose whatever you want).
 ![Download](../assets/fedora/download.png)

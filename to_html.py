@@ -1,4 +1,4 @@
-# CSS styling and glob support was vibe coded.
+# CSS styling, background override, and glob support was vibe coded.
 
 import markdown
 import argparse
@@ -16,11 +16,91 @@ parser.add_argument("-t", "--test", action="store_true", help="Test mode - print
 args = parser.parse_args()
 
 # Main functions
-def main(input_file, styles=""):
+def main(input_file):
     with open(input_file, "r", encoding="utf-8") as f:
         content = f.read()
+    
+    metadata = {}
+    lines = content.splitlines()
+    
+    # Parse YAML frontmatter for metadata
+    for i, line in enumerate(lines):
+        if line.startswith('---'):
+            if i > 0:
+                break
+            for line in lines[i+1:]:
+                if line.startswith('---'):
+                    break
+                if ':' in line:
+                    key, value = line.split(':', 1)
+                    metadata[key.strip()] = value.strip()
+            content = '\n'.join(lines[i+2:])
+            break
+    
     html_content = markdown.markdown(content)
-    return f"""<!DOCTYPE html>
+    return html_content, metadata
+
+def to_html_file(input_file):
+    output_file = os.path.splitext(input_file)[0] + ".html"
+    html_content, metadata = main(input_file)
+    
+    # Get background color from metadata or use default
+    background_color = metadata.get('background-color', '#333')
+    
+    styles = f"""
+    body {{
+        background-color: {background_color};
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 50px;
+        padding: 50px;
+        max-width: 1200px;
+    }}
+    h1, h2, h3, h4, h5, h6 {{
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }}
+    p {{
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }}
+    img:not([width]) {{
+        max-width: 500px;
+        height: auto;
+        display: block;
+        margin: 20px 0;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }}
+    img[width] {{
+        display: inline-block;
+        margin: 10px 5px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }}
+    blockquote {{
+        border-left: 4px solid #666;
+        padding-left: 20px;
+        margin: 20px 0;
+        font-style: italic;
+        color: #ccc;
+    }}
+    a {{
+        color: #66b3ff;
+        text-decoration: none;
+    }}
+    a:hover {{
+        text-decoration: underline;
+    }}
+    code {{
+        background-color: #444;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: 'Courier New', monospace;
+    }}
+    """
+    
+    full_html = f"""<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -28,64 +108,9 @@ def main(input_file, styles=""):
 </head>
 <body>{html_content}</body>
 </html>"""
-
-def to_html_file(input_file):
-    output_file = os.path.splitext(input_file)[0] + ".html"
-    styles = """
-    body {
-        background-color: #333;
-        color: white;
-        font-family: Arial, sans-serif;
-        margin: 50px;
-        padding: 50px;
-        max-width: 1200px;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-    p {
-        margin-bottom: 15px;
-        line-height: 1.6;
-    }
-    img:not([width]) {
-        max-width: 500px;
-        height: auto;
-        display: block;
-        margin: 20px 0;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    }
-    img[width] {
-        display: inline-block;
-        margin: 10px 5px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    }
-    blockquote {
-        border-left: 4px solid #666;
-        padding-left: 20px;
-        margin: 20px 0;
-        font-style: italic;
-        color: #ccc;
-    }
-    a {
-        color: #66b3ff;
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
-    code {
-        background-color: #444;
-        padding: 2px 6px;
-        border-radius: 3px;
-        font-family: 'Courier New', monospace;
-    }
-    """
-    html_content = main(input_file, styles)
+    
     with open(output_file, "w", encoding="utf-8") as f:
-        f.write(html_content)
+        f.write(full_html)
 
 # Function calls
 # Expand glob patterns and collect all files
@@ -119,5 +144,66 @@ if not args.test:
 else:
     # Test mode - only process first file
     if markdown_files:
-        print(main(markdown_files[0]))
-
+        html_content, metadata = main(markdown_files[0])
+        background_color = metadata.get('background-color', '#333')
+        styles = f"""
+        body {{
+            background-color: {background_color};
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            padding: 50px;
+            max-width: 1200px;
+        }}
+        h1, h2, h3, h4, h5, h6 {{
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }}
+        p {{
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }}
+        img:not([width]) {{
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }}
+        img[width] {{
+            display: inline-block;
+            margin: 10px 5px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }}
+        blockquote {{
+            border-left: 4px solid #666;
+            padding-left: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #ccc;
+        }}
+        a {{
+            color: #66b3ff;
+            text-decoration: none;
+        }}
+        a:hover {{
+            text-decoration: underline;
+        }}
+        code {{
+            background-color: #444;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }}
+        """
+        full_html = f"""<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>{styles}</style>
+</head>
+<body>{html_content}</body>
+</html>"""
+        print(full_html)

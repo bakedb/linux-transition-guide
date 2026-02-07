@@ -1,3 +1,7 @@
+---
+background-color: #113b1eff
+---
+
 # Linux Transition Guide Part 2: Installing Linux (Mint Version)
 ## Intro
 Now for the hardest part (but still pretty easy if you are patient): actually getting a system up and running. You will need a few things for this part, so get up and get them before you start.

@@ -52,8 +52,7 @@
                         widget.className = 'widget';
                         widget.innerHTML = `
                             <button class="widget-button" onclick="location.href='${filename.trim()}'">
-                                ${filename.trim()}
-                                <span class="description">${description ? description.trim() : ''}</span>
+                                ${description ? description.trim() : ''}
                             </button>
                         `;
                         fileList.appendChild(widget);

@@ -51,7 +51,7 @@ Linux comes in many different distributions, most often called distros.
 <img src=https://www.debian.org/logos/openlogo.svg width=200 height=200>
 <img src=https://assets.ubuntu.com/v1/a7e3c509-Canonical%20Ubuntu.svg width=200 height=200>
 <img src=https://upload.wikimedia.org/wikipedia/commons/2/2b/Kali-dragon-icon.svg width=200 height=200>
-<img src=assets/linuxlite.svg width=200 height=200>
+<img src=../assets/linuxlite.svg width=200 height=200>
 
 > From left to right: Debian, Ubuntu, Kali, and Linux Lite.
 
@@ -60,7 +60,7 @@ The most common is probably Debian. If you have ever heard about Linux, you have
 <img src=https://upload.wikimedia.org/wikipedia/commons/3/3f/Fedora_logo.svg width=200 height=200>
 <img src=https://upload.wikimedia.org/wikipedia/commons/a/a7/Bazzite_Logo.svg width=200 height=200>
 
-> From left to right: Fedora, Bazzie.
+> From left to right: Fedora, Bazzite.
 
 Another common one is Fedora. Linus Torvalds himself uses Fedora. There aren't many distros based on it, especially compared to Debian, although the gaming-focused distro Bazzite is based on Fedora. 
 

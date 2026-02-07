@@ -1,10 +1,15 @@
-<html><head><style>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
     body {
         background-color: #333;
         color: white;
         font-family: Arial, sans-serif;
         margin: 50px;
         padding: 50px;
+        max-width: 1200px;
     }
     h1, h2, h3, h4, h5, h6 {
         margin-top: 20px;
@@ -12,8 +17,45 @@
     }
     p {
         margin-bottom: 15px;
+        line-height: 1.6;
     }
-    </style></head><body><h1>Linux Transition Guide Part 2.1: Installing Debian</h1>
+    img:not([width]) {
+        max-width: 500px;
+        height: auto;
+        display: block;
+        margin: 20px 0;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    img[width] {
+        display: inline-block;
+        margin: 10px 5px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    blockquote {
+        border-left: 4px solid #666;
+        padding-left: 20px;
+        margin: 20px 0;
+        font-style: italic;
+        color: #ccc;
+    }
+    a {
+        color: #66b3ff;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    code {
+        background-color: #444;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: 'Courier New', monospace;
+    }
+    </style>
+</head>
+<body><h1>Linux Transition Guide Part 2.1: Installing Debian</h1>
 <p>Go to https://www.debian.org/ to get your Debian ISO.</p>
 <p>While you are waiting, go to https://etcher.balena.io/ to download the tool that we will use to flash the USB drive to make it bootable. Just download the version for your system. 
 <img alt="Balena Etcher" src="assets/balenaetcher.png" /></p>
@@ -46,4 +88,5 @@ Once you see the screen pictured above, Debian has installed! Just click "Contin
 <blockquote>
 <p>The GNOME DE in Debian.</p>
 </blockquote>
-<p>Great, you just got Debian working! Now the Debian and Fedora guide reconverge. Click <a href="part2_outro.html">here</a> to go to the conclusion page.</p></body></html>
+<p>Great, you just got Debian working! Now the Debian and Fedora guide reconverge. Click <a href="part2_outro.html">here</a> to go to the conclusion page.</p></body>
+</html>

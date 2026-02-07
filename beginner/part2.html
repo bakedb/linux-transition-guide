@@ -1,10 +1,15 @@
-<html><head><style>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
     body {
         background-color: #333;
         color: white;
         font-family: Arial, sans-serif;
         margin: 50px;
         padding: 50px;
+        max-width: 1200px;
     }
     h1, h2, h3, h4, h5, h6 {
         margin-top: 20px;
@@ -12,8 +17,45 @@
     }
     p {
         margin-bottom: 15px;
+        line-height: 1.6;
     }
-    </style></head><body><h1>Linux Transition Guide Part 2: Installing Linux</h1>
+    img:not([width]) {
+        max-width: 500px;
+        height: auto;
+        display: block;
+        margin: 20px 0;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    img[width] {
+        display: inline-block;
+        margin: 10px 5px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    blockquote {
+        border-left: 4px solid #666;
+        padding-left: 20px;
+        margin: 20px 0;
+        font-style: italic;
+        color: #ccc;
+    }
+    a {
+        color: #66b3ff;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    code {
+        background-color: #444;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: 'Courier New', monospace;
+    }
+    </style>
+</head>
+<body><h1>Linux Transition Guide Part 2: Installing Linux</h1>
 <h2>Intro</h2>
 <p>Now for the hardest part (but still pretty easy if you are patient): actually getting a system up and running. You will need a few things for this part, so get up and get them before you start.</p>
 <h2>What this part will cover</h2>
@@ -54,4 +96,5 @@
 <h3>Conclusion</h3>
 <p>Fedora is a very "welcome to Linux" experience, while Debian is a "teaching you to be a sysadmin" experience. Debian will give you a few "there is no reason that this should be broken" moments, but it does give you a lot of learning experience in return, and once you get it working, it will keep on working.</p>
 <p>This guide was originally written to be used with Linux Mint, but I have gone back on that after realizing that Mint is a very "temporary" distro that you will immediately want to switch off of once you try something else. However, if you <em>really</em> want to see the guide with Mint, you can go <a href="part2_mint.html">here.</a></p>
-<p>And now this is the part where the Fedora and Debian paths will split. You can go to the <a href="part2_fedora.html">Fedora</a> or <a href="part2_debian.html">Debian</a> page to continue.</p></body></html>
+<p>And now this is the part where the Fedora and Debian paths will split. You can go to the <a href="part2_fedora.html">Fedora</a> or <a href="part2_debian.html">Debian</a> page to continue.</p></body>
+</html>

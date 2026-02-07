@@ -57,7 +57,7 @@ git checkout main
 # Push to repositories
 print_info "Pushing to https://github.com/bakedb/linux-transition-guide.git main..."
 git push https://github.com/bakedb/linux-transition-guide.git main
-print_info "Pushing to https://codeberg.com/bkd/linux-transition-guide.git main..."
+print_info "Pushing to https://codeberg.org/bkd/linux-transition-guide.git main..."
 git push https://codeberg.com/bkd/linux-transition-guide.git main
 print_success "Push completed"
 

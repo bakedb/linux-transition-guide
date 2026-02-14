@@ -78,7 +78,9 @@ Terminal-centric with Nvidia drivers baked in.
 
 SYTI: Yes, if you have an Nvidia GPU and want an Arch-based system that works out of the box.
 
-This document is incomplete.
+This list is pretty incomplete. If you want to help it, you can PR additions at [Codeberg](https://codeberg.org/bkd/linux-transition-guide/src/branch/main/intermediate/distro_hopping.md) or [GitHub](https://github.com/bakedb/linux-transition-guide/blob/main/intermediate/distro_hopping.md).
+
+<!--
 Todo:
 https://distrowatch.com/table.php?distribution=popos
 https://distrowatch.com/table.php?distribution=manjaro
@@ -91,3 +93,4 @@ https://distrowatch.com/table.php?distribution=nixos
 https://distrowatch.com/table.php?distribution=garuda
 https://distrowatch.com/table.php?distribution=kali
 https://distrowatch.com/table.php?distribution=arch
+-->

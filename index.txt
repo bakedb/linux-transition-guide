@@ -1,4 +1,4 @@
-/beginner/part1.html "Part 1: Introducing You to Linux" beginner
-/beginner/part2.html "Part 2: Installing Linux" beginner
-/beginner/part3.html "Part 3: Learning the Terminal" beginner
+/beginner/part1.html "Intro Part 1: Introducing You to Linux" beginner
+/beginner/part2.html "Intro Part 2: Installing Linux" beginner
+/beginner/part3.html "Intro Part 3: Learning the Terminal" beginner
 /intermediate/distro_hopping.html "Distro Hopping" intermediate
